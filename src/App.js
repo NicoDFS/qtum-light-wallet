@@ -76,8 +76,8 @@ const theme = createMuiTheme({
       contrastText: '#ffffff',
     },
     secondary: {
-      light: '#1297d7',
-      main: '#1297d7',
+      light: '#e0c469',
+      main: '#e0c469',
       dark: '#232328',
       contrastText: '#ffffff',
     },
@@ -554,9 +554,9 @@ class App extends Component {
   getExplorerApiAddress = () =>{
     if(this.state.network === 'MAINNET')
     {
-      return 'https://explorer.fantasygold.org/insight-api/txs?pageNum=0&address=';
+      return 'https://fantasygold.network/fantasygoldinfo-api/txs?pageNum=0&address=';
     }else if(this.state.network === 'TESTNET'){
-      return 'https://testnet.fantasygold.org/insight-api/txs?pageNum=0&address=';
+      return 'https://testnet.fantasygold.network/fantasygoldinfo-api/txs?pageNum=0&address=';
     }else{
       return '';
     }
@@ -565,9 +565,9 @@ class App extends Component {
   getExplorerAddress = () =>{
     if(this.state.network === 'MAINNET')
     {
-      return 'https://www.fantasygold.info/address/';
+      return 'https://fantasygold.network/fantasygoldinfo-api/address/';
     }else if(this.state.network === 'TESTNET'){
-      return 'https://testnet.fantasygold.info/address/';
+      return 'https://testnet.fantasygold.network/fantasygoldinfo-api/address/';
     }else{
       return '';
     }
@@ -580,9 +580,9 @@ class App extends Component {
   getExplorerTx = () =>{
     if(this.state.network === 'MAINNET')
     {
-      return 'https://explorer.fantasygold.info/tx/';
+      return 'https://fantasygold.network/fantasygoldinfo-api/tx/';
     }else if(this.state.network === 'TESTNET'){
-      return 'https://testnet.fantasygold.info/tx/';
+      return 'https://fantasygold.network/fantasygoldinfo-api/tx/';
     }else{
       return '';
     }
@@ -963,11 +963,11 @@ class App extends Component {
               </div>
               <div className="logo-container">
                 <Tooltip title="Reload Account Details">
-                  <img src={logo} alt="QTUM" className="token-logo" onClick={this.reloadAccountDetails} />
+                  <img src={logo} alt="FantasyGold" className="token-logo" onClick={this.reloadAccountDetails} />
                 </Tooltip>
               </div>
 
-              <div className="balance">{balance} QTUM</div>
+              <div className="balance">{balance} FGC</div>
               {price && <div className="price">${price.price} </div>}
 
               <div className="balance">Address
@@ -1489,7 +1489,7 @@ class App extends Component {
                   {this.getAddressAbv(to)}
                 </TableCell>
                 <TableCell className="transactions-amount" numeric>{amount}</TableCell>
-                <TableCell className="transactions-token">QTUM</TableCell>
+                <TableCell className="transactions-token">FGC</TableCell>
               </TableRow>
             );
           })}
@@ -1559,8 +1559,8 @@ class App extends Component {
         <Card className="card sign-in-card">
 
           <div className="logo-container">
-                <Tooltip title="QTUM">
-                  <img src={logo} alt="QTUM" className="token-logo-lg" />
+                <Tooltip title="FantasyGold">
+                  <img src={logo} alt="FantasyGold" className="token-logo-lg" />
                 </Tooltip>
           </div>
           <div className="space"></div>
@@ -1606,7 +1606,7 @@ class App extends Component {
               <GridList cellHeight={150} className='grid-list'>
 
                 <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
-                  <ListSubheader component="div">Explore dapps on QTUM</ListSubheader>
+                  <ListSubheader component="div">Explore dapps on FantasyGold</ListSubheader>
                 </GridListTile>
 
                 {dappData.map(dapp => (
@@ -1641,8 +1641,8 @@ class App extends Component {
         <Card className="card sign-in-card">
 
           <div className="logo-container">
-                <Tooltip title="QTUM">
-                  <img src={logo} alt="QTUM" className="token-logo-lg" />
+                <Tooltip title="FantasyGold">
+                  <img src={logo} alt="FantasyGold" className="token-logo-lg" />
                 </Tooltip>
           </div>
           <div className="space"></div>
@@ -1992,7 +1992,7 @@ class App extends Component {
             <div className="logo-container">
               <img src={logo} className="app-logo" alt="logo" />
               <Typography variant="title" color="inherit">
-                QTUM
+                FantasyGold
               </Typography>
             </div>
             <div>

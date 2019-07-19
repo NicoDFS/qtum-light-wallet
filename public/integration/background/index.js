@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Messages from contentscript
 chrome.runtime.onConnect.addListener(port => {
-    console.assert(port.name == 'qutum-light-port');
+    console.assert(port.name == 'fantasygold-light-port');
     port.onMessage.addListener(async (message) => {
         const {route, data} = message;
         if (route.wallet !== 'fantasygold' || route.source !== 'contentscript') {

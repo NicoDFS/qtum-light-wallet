@@ -2,7 +2,7 @@
   text-align: center;
   min-width: 480px;
   flex-grow: 1;
-  background-color: #fafafa;
+  background-color: #000000;
 }
 
 .app-logo {
@@ -398,7 +398,7 @@
     color:#ffffff;
 }
 .grid-div{
-  background-color: #1297d7;
+  background-color:#e0c469;
 }
 
 .grid-image{

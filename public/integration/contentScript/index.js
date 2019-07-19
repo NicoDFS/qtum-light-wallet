@@ -9,7 +9,7 @@ const injectInteractionScript = file => {
 
 injectInteractionScript('integration/inpage/index.js');
 
-const port = chrome.runtime.connect({name: 'qutum-light-port'});
+const port = chrome.runtime.connect({name: 'fantasygold-light-port'});
 // Message from background
 port.onMessage.addListener(message => {
 	console.log(message);
