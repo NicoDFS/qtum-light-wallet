@@ -61,11 +61,11 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import logo from './logo.svg';
 import './App.css';
-import { networks, generateMnemonic } from 'qtumjs-wallet';
+import { networks, generateMnemonic } from 'fantasygoldjs-wallet';
 
 
 const coinmarketcapurl = 'https://api.coinmarketcap.com/v2/ticker/1684/';
-const dappurl = 'https://qtumlightproject.github.io/assets/dappstore/dapp.json';
+const dappurl = 'https://fantasygoldlightproject.github.io/assets/dappstore/dapp.json';
 
 const theme = createMuiTheme({
    palette: {
@@ -554,9 +554,9 @@ class App extends Component {
   getExplorerApiAddress = () =>{
     if(this.state.network === 'MAINNET')
     {
-      return 'https://explorer.qtum.org/insight-api/txs?pageNum=0&address=';
+      return 'https://explorer.fantasygold.org/insight-api/txs?pageNum=0&address=';
     }else if(this.state.network === 'TESTNET'){
-      return 'https://testnet.qtum.org/insight-api/txs?pageNum=0&address=';
+      return 'https://testnet.fantasygold.org/insight-api/txs?pageNum=0&address=';
     }else{
       return '';
     }
@@ -565,24 +565,24 @@ class App extends Component {
   getExplorerAddress = () =>{
     if(this.state.network === 'MAINNET')
     {
-      return 'https://www.qtum.info/address/';
+      return 'https://www.fantasygold.info/address/';
     }else if(this.state.network === 'TESTNET'){
-      return 'https://testnet.qtum.info/address/';
+      return 'https://testnet.fantasygold.info/address/';
     }else{
       return '';
     }
   };
 
-  qtumToSatoshi = (qtum) =>{
-    return qtum * 100000000;
+  fantasygoldToSatoshi = (fantasygold) =>{
+    return fantasygold * 100000000;
   };
 
   getExplorerTx = () =>{
     if(this.state.network === 'MAINNET')
     {
-      return 'https://explorer.qtum.info/tx/';
+      return 'https://explorer.fantasygold.info/tx/';
     }else if(this.state.network === 'TESTNET'){
-      return 'https://testnet.qtum.info/tx/';
+      return 'https://testnet.fantasygold.info/tx/';
     }else{
       return '';
     }
@@ -798,7 +798,7 @@ class App extends Component {
     try{
 
       const tx = await wallet.send(sendTo, amt, {
-        // rate is 400 satoshi per byte, or  ~0.004 qtum/KB, as is typical.
+        // rate is 400 satoshi per byte, or  ~0.004 fantasygold/KB, as is typical.
         feeRate: fr,
       })
 
@@ -963,11 +963,11 @@ class App extends Component {
               </div>
               <div className="logo-container">
                 <Tooltip title="Reload Account Details">
-                  <img src={logo} alt="QTUM" className="token-logo" onClick={this.reloadAccountDetails} />
+                  <img src={logo} alt="FANTASYGOLD" className="token-logo" onClick={this.reloadAccountDetails} />
                 </Tooltip>
               </div>
 
-              <div className="balance">{balance} QTUM</div>
+              <div className="balance">{balance} FANTASYGOLD</div>
               {price && <div className="price">${price.price} </div>}
 
               <div className="balance">Address
@@ -1489,7 +1489,7 @@ class App extends Component {
                   {this.getAddressAbv(to)}
                 </TableCell>
                 <TableCell className="transactions-amount" numeric>{amount}</TableCell>
-                <TableCell className="transactions-token">QTUM</TableCell>
+                <TableCell className="transactions-token">FANTASYGOLD</TableCell>
               </TableRow>
             );
           })}
@@ -1559,8 +1559,8 @@ class App extends Component {
         <Card className="card sign-in-card">
 
           <div className="logo-container">
-                <Tooltip title="QTUM">
-                  <img src={logo} alt="QTUM" className="token-logo-lg" />
+                <Tooltip title="FANTASYGOLD">
+                  <img src={logo} alt="FANTASYGOLD" className="token-logo-lg" />
                 </Tooltip>
           </div>
           <div className="space"></div>
@@ -1606,7 +1606,7 @@ class App extends Component {
               <GridList cellHeight={150} className='grid-list'>
 
                 <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
-                  <ListSubheader component="div">Explore dapps on QTUM</ListSubheader>
+                  <ListSubheader component="div">Explore dapps on FANTASYGOLD</ListSubheader>
                 </GridListTile>
 
                 {dappData.map(dapp => (
@@ -1641,8 +1641,8 @@ class App extends Component {
         <Card className="card sign-in-card">
 
           <div className="logo-container">
-                <Tooltip title="QTUM">
-                  <img src={logo} alt="QTUM" className="token-logo-lg" />
+                <Tooltip title="FANTASYGOLD">
+                  <img src={logo} alt="FANTASYGOLD" className="token-logo-lg" />
                 </Tooltip>
           </div>
           <div className="space"></div>
@@ -1847,7 +1847,7 @@ class App extends Component {
     const option = {
       amount: parseInt(this.state.sendToContractDataAmount, 10),
       gasLimit: this.state.sendToContractDataGasLimit,
-      gasPrice: this.qtumToSatoshi(this.state.sendToContractDataGasPrice), // need to convert to Satoshi
+      gasPrice: this.fantasygoldToSatoshi(this.state.sendToContractDataGasPrice), // need to convert to Satoshi
       // feeRate: 0.01
     };
     const backgroundPage = window.chrome.extension.getBackgroundPage();
@@ -1992,7 +1992,7 @@ class App extends Component {
             <div className="logo-container">
               <img src={logo} className="app-logo" alt="logo" />
               <Typography variant="title" color="inherit">
-                QTUM
+                FANTASYGOLD
               </Typography>
             </div>
             <div>

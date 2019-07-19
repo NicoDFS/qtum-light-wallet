@@ -1,4 +1,4 @@
-const { networks, Wallet, generateMnemonic } = QtumWallet;
+const { networks, Wallet, generateMnemonic } = FantasyGoldWallet;
 
 const transactionPortMap = {};
 var passwordHash = null; // passwordHash will be passed by popup 
@@ -26,7 +26,7 @@ const callContract = async (contractAddress, encodedData) => {
     try {
         const signInPrivateKey = getPrivateKey();
         if (!signInPrivateKey) {
-            return { error: 'Please unlock Qtum Light wallet!' };
+            return { error: 'Please unlock FantasyGold Light wallet!' };
         }
         const network = networks.testnet;
         const wallet = network.fromWIF(signInPrivateKey);
@@ -42,7 +42,7 @@ const callContract = async (contractAddress, encodedData) => {
 document.addEventListener('DOMContentLoaded', () => {
     console.log('background started!');
     // testZilliqa();
-    testQtum();
+    testFantasyGold();
 });
 
 // Messages from contentscript
@@ -50,14 +50,14 @@ chrome.runtime.onConnect.addListener(port => {
     console.assert(port.name == 'qutum-light-port');
     port.onMessage.addListener(async (message) => {
         const {route, data} = message;
-        if (route.wallet !== 'qtum' || route.source !== 'contentscript') {
+        if (route.wallet !== 'fantasygold' || route.source !== 'contentscript') {
             return;
         }
 
         if (data.method === 'getCurrentAddress') {
             const address = getCurrentAddress();
             port.postMessage({
-                route: { wallet: 'qtum', source: 'background', target: 'contentscript' },
+                route: { wallet: 'fantasygold', source: 'background', target: 'contentscript' },
                 data: {
                     serialNumber: data.serialNumber,
                     data: address
@@ -66,7 +66,7 @@ chrome.runtime.onConnect.addListener(port => {
         } else if (data.method === 'callContract') {
             const resultData = await callContract(data.data.address, data.data.encodedData);
             port.postMessage({
-                route: { wallet: 'qtum', source: 'background', target: 'contentscript' },
+                route: { wallet: 'fantasygold', source: 'background', target: 'contentscript' },
                 data: {
                     serialNumber: data.serialNumber,
                     data: resultData
@@ -92,7 +92,7 @@ window.cancelTransaction = (data) => {
 window.sendTransaction = (data) => {
     const port = transactionPortMap[data.serialNumber];
     port.postMessage({
-        route: { wallet: 'qtum', source: 'background', target: 'contentscript' },
+        route: { wallet: 'fantasygold', source: 'background', target: 'contentscript' },
         data
     });
     delete transactionPortMap[data.serialNumber];

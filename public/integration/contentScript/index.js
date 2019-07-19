@@ -1,4 +1,4 @@
-console.log('Qtum Light Wallet is installed.');
+console.log('FantasyGold Light Wallet is installed.');
 
 const injectInteractionScript = file => {
 	let script = document.createElement('script');
@@ -15,7 +15,7 @@ port.onMessage.addListener(message => {
 	console.log(message);
 	// forward the message from background to SDK
 	window.postMessage({
-		route: { wallet: 'qtum', source: 'contentscript', target: 'SDK' },
+		route: { wallet: 'fantasygold', source: 'contentscript', target: 'SDK' },
 		data: message.data
 	}, '*');
 });
@@ -23,7 +23,7 @@ port.onMessage.addListener(message => {
 // Message from SDK
 window.addEventListener('message', message => {
 	const { data } = message;
-	if (!data.route || data.route.wallet !== 'qtum'
+	if (!data.route || data.route.wallet !== 'fantasygold'
 		|| data.route.source !== 'SDK'
 		|| data.route.target !== 'contentscript') {
 		return;
@@ -31,7 +31,7 @@ window.addEventListener('message', message => {
 
     // forward the message from SDK to background
 	port.postMessage({
-		route: { wallet: 'qtum', source: 'contentscript', target: 'background' },
+		route: { wallet: 'fantasygold', source: 'contentscript', target: 'background' },
 		data: data.data
 	})
 });

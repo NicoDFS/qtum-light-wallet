@@ -1,1 +1,1 @@
-window.qtumLight = {};
+window.fantasygoldLight = {};

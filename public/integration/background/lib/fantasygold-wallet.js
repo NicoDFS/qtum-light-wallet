@@ -4,9 +4,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
-		exports["QtumWallet"] = factory();
+		exports["FantasyGoldWallet"] = factory();
 	else
-		root["QtumWallet"] = factory();
+		root["FantasyGoldWallet"] = factory();
 })(typeof self !== 'undefined' ? self : this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -11921,8 +11921,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const Network_1 = __webpack_require__(111);
 const axios_1 = __webpack_require__(117);
 const INSIGHT_BASEURLS = {
-    [Network_1.NetworkNames.MAINNET]: "https://explorer.qtum.org/insight-api",
-    [Network_1.NetworkNames.TESTNET]: "https://testnet.qtum.org/insight-api",
+    [Network_1.NetworkNames.MAINNET]: "https://explorer.fantasygold.org/insight-api",
+    [Network_1.NetworkNames.TESTNET]: "https://testnet.fantasygold.org/insight-api",
 };
 class Insight {
     constructor(baseURL) {
@@ -12382,7 +12382,7 @@ class Wallet {
     }
     /**
      * Massage UTXOs returned by the Insight API to UTXO format accepted by the
-     * underlying qtumjs-lib.
+     * underlying fantasygoldjs-lib.
      */
     getBitcoinjsUTXOs() {
         return __awaiter(this, void 0, void 0, function* () {
@@ -19118,13 +19118,13 @@ const Insight_1 = __webpack_require__(62);
 const scryptParams_1 = __webpack_require__(116);
 var NetworkNames;
 (function (NetworkNames) {
-    NetworkNames["MAINNET"] = "qtum";
-    NetworkNames["TESTNET"] = "qtum_testnet";
+    NetworkNames["MAINNET"] = "fantasygold";
+    NetworkNames["TESTNET"] = "fantasygold_testnet";
 })(NetworkNames = exports.NetworkNames || (exports.NetworkNames = {}));
 exports.networksInfo = {
     [NetworkNames.MAINNET]: {
         name: NetworkNames.MAINNET,
-        messagePrefix: "\u0015Qtum Signed Message:\n",
+        messagePrefix: "\u0015FantasyGold Signed Message:\n",
         bech32: "bc",
         bip32: { public: 76067358, private: 76066276 },
         pubKeyHash: 58,
@@ -19133,7 +19133,7 @@ exports.networksInfo = {
     },
     [NetworkNames.TESTNET]: {
         name: NetworkNames.TESTNET,
-        messagePrefix: "\u0015Qtum Signed Message:\n",
+        messagePrefix: "\u0015FantasyGold Signed Message:\n",
         bech32: "tb",
         bip32: { public: 70617039, private: 70615956 },
         pubKeyHash: 120,
@@ -19172,7 +19172,7 @@ class Network {
         return this.fromWIF(decoded);
     }
     /**
-     * Restore 10 wallet addresses exported from QTUM's mobile clients. These
+     * Restore 10 wallet addresses exported from FANTASYGOLD's mobile clients. These
      * wallets are 10 sequential addresses rooted at the HD-wallet path
      * `m/88'/0'/0'` `m/88'/0'/1'` `m/88'/0'/2'`, and so on.
      *
@@ -38245,7 +38245,7 @@ class WalletRPCProvider {
     }
     rawCall(method, params = [], opts = {}) {
         const [contractAddress, encodedData, amount = 0, gasLimit = 200000, gasPrice = 0.0000004] = params;
-        // The underlying qtumjs-wallet API expects gasPrice to be specified in sat
+        // The underlying fantasygoldjs-wallet API expects gasPrice to be specified in sat
         const gasPriceInSatoshi = Math.floor(gasPrice * 1e8);
         opts = Object.assign({}, opts, { gasPrice: gasPriceInSatoshi });
         switch (method.toLowerCase()) {
