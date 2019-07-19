@@ -1,18 +1,18 @@
 # FantasyGold Light Wallet
 
 
-![Wallet](https://github.com/FantasyGoldLightProject/fantasygold-light-wallet/blob/master/assets/walletdashboard.png "Chrom Extension")
+![Wallet](https://github.com/FantasyGold/fantasygold-light-wallet/blob/master/assets/walletdashboard.png "Chrom Extension")
 
 # Install from google store
 
-[FANTASYGOLD Light Wallet](https://chrome.google.com/webstore/detail/fantasygold-light-wallet/akamcgnaalcmfhdfpefpkhbfnknnllhj)
+[FantasyGold Light Wallet](https://chrome.google.com/webstore/detail/fantasygold-light-wallet/akamcgnaalcmfhdfpefpkhbfnknnllhj)
 
 
 # Install from local build
 
 Clone the repo
 
-```git clone https://github.com/fantasygoldlightproject/fantasygold-light-wallet```
+```git clone https://github.com/fantasygold/fantasygold-light-wallet```
 
 Add dependencies
 
@@ -27,7 +27,7 @@ Install
 Go to Chrome Extension, turn on developer mode, click `Load Unpacked`, select the `build` folder.
 
 
-![Build from source](https://github.com/FantasyGoldLightProject/fantasygold-light-wallet/blob/master/assets/chromeextension.png "Chrom Extension")
+![Build from source](https://github.com/FantasyGold/fantasygold-light-wallet/blob/master/assets/chromeextension.png "Chrom Extension")
 
 # Security
 

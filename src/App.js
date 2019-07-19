@@ -64,8 +64,8 @@ import './App.css';
 import { networks, generateMnemonic } from 'fantasygoldjs-wallet';
 
 
-const coinmarketcapurl = 'https://api.coinmarketcap.com/v2/ticker/1684/';
-const dappurl = 'https://fantasygoldlightproject.github.io/assets/dappstore/dapp.json';
+const coinmarketcapurl = 'https://api.coinmarketcap.com/v2/ticker/2870/';
+const dappurl = 'https://fantasygold.github.io/assets/dappstore/dapp.json';
 
 const theme = createMuiTheme({
    palette: {
@@ -963,11 +963,11 @@ class App extends Component {
               </div>
               <div className="logo-container">
                 <Tooltip title="Reload Account Details">
-                  <img src={logo} alt="FANTASYGOLD" className="token-logo" onClick={this.reloadAccountDetails} />
+                  <img src={logo} alt="QTUM" className="token-logo" onClick={this.reloadAccountDetails} />
                 </Tooltip>
               </div>
 
-              <div className="balance">{balance} FANTASYGOLD</div>
+              <div className="balance">{balance} QTUM</div>
               {price && <div className="price">${price.price} </div>}
 
               <div className="balance">Address
@@ -1489,7 +1489,7 @@ class App extends Component {
                   {this.getAddressAbv(to)}
                 </TableCell>
                 <TableCell className="transactions-amount" numeric>{amount}</TableCell>
-                <TableCell className="transactions-token">FANTASYGOLD</TableCell>
+                <TableCell className="transactions-token">QTUM</TableCell>
               </TableRow>
             );
           })}
@@ -1559,8 +1559,8 @@ class App extends Component {
         <Card className="card sign-in-card">
 
           <div className="logo-container">
-                <Tooltip title="FANTASYGOLD">
-                  <img src={logo} alt="FANTASYGOLD" className="token-logo-lg" />
+                <Tooltip title="QTUM">
+                  <img src={logo} alt="QTUM" className="token-logo-lg" />
                 </Tooltip>
           </div>
           <div className="space"></div>
@@ -1606,7 +1606,7 @@ class App extends Component {
               <GridList cellHeight={150} className='grid-list'>
 
                 <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
-                  <ListSubheader component="div">Explore dapps on FANTASYGOLD</ListSubheader>
+                  <ListSubheader component="div">Explore dapps on QTUM</ListSubheader>
                 </GridListTile>
 
                 {dappData.map(dapp => (
@@ -1641,8 +1641,8 @@ class App extends Component {
         <Card className="card sign-in-card">
 
           <div className="logo-container">
-                <Tooltip title="FANTASYGOLD">
-                  <img src={logo} alt="FANTASYGOLD" className="token-logo-lg" />
+                <Tooltip title="QTUM">
+                  <img src={logo} alt="QTUM" className="token-logo-lg" />
                 </Tooltip>
           </div>
           <div className="space"></div>
@@ -1992,7 +1992,7 @@ class App extends Component {
             <div className="logo-container">
               <img src={logo} className="app-logo" alt="logo" />
               <Typography variant="title" color="inherit">
-                FANTASYGOLD
+                QTUM
               </Typography>
             </div>
             <div>

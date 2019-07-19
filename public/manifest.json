@@ -1,13 +1,13 @@
 {
   "manifest_version": 2,
 
-  "name": "FANTASYGOLD Light Wallet",
-  "description": "FANTASYGOLD Wallet Light for Chrome",
+  "name": "FantasyGold Light Wallet",
+  "description": "FantasyGold Wallet Light for Chrome",
   "version": "0.5.0",
 
   "browser_action": {
     "default_popup": "index.html",
-    "default_title": "FANTASYGOLD Light Wallet"
+    "default_title": "FantasyGold Light Wallet"
   },
   "icons": {
     "16": "favicon.png",
